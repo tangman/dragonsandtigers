@@ -7,9 +7,9 @@ site.init({
 
   // This line is required and allows apostrophe-site to use require() and manage our NPM modules for us.
   root: module,
-  shortName: 'apostrophe-sandbox',
-  hostName: 'apostrophe-sandbox',
-  title: 'Apostrophe Sandbox',
+  shortName: 'dragons-and-tigers',
+  hostName: 'dragonsandtigers',
+  title: 'Dragons and Tigers',
   sessionSecret: 'apostrophe sandbox demo party',
   adminPassword: 'demo',
 
@@ -44,7 +44,7 @@ site.init({
 
   pages: {
     types: [
-      { name: 'default', label: 'Default Page' },
+      { name: 'dragon', label: 'Default Page' },
       { name: 'home', label: 'Home Page' },
       { name: 'blog', label: 'Blog' }
     ]
@@ -114,8 +114,6 @@ site.init({
     'apostrophe-groups': {},
     'apostrophe-browserify': {
       files: ["./public/js/modules/_site.js"]
-    },
-    'apostrophe-demo-login': {
     }
   },
 
@@ -132,9 +130,9 @@ site.init({
     // server has started. Are we in development or production?
     var locals = require('./data/local');
     if(locals.development || !locals.minify) {
-      console.error('Apostrophe Sandbox is running in development.');
+      console.error('Apostrophe is running in development.');
     } else {
-      console.error('Apostrophe Sandbox is running in production.');
+      console.error('Apostrophe is running in production.');
     }
 
     callback(null);

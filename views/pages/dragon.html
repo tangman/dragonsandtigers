@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% include "pageMacros.html" %}
+
+{# the bodyClass block allows us to attach a classname to the body tag for easy style-scoping. #}
+{# be sure to call super() so that any pages inheriting this one will be appending classes, not overriding them. #}
+{% block bodyClass %}{{ super() }} default-page{% endblock %}
+
+{% block headerMessage %}You are on the "Default Page" template of the Apostrophe demo site.{% endblock %}
+
+{% block upperClass %}bg-gold{% endblock %}
+
+{% block headerContent %}
+  <div class="demo-pageheader">
+    <div class="column column--vertical-center width-50">
+      <h3 class="hide-desktop page-title">{{page.title}}</h3>
+      <ul class="subnav-items hide-desktop">
+        {% for child in page.children %}
+          <li class="subnav-item">
+            <a href="{{ child.url }}">{{ child.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      {{ aposArea(page, 'pageheader', {
+        textOnly: true,
+        styles: [
+          { value: 'h3', label: 'Title'    },
+          { value: 'h4', label: 'Subtitle' }
+        ]
+      }) }}
+      {#<h2 class="pageheader-heading">The First Anaste.</h2>
+      <h4 class="pageheader-subheading">The garage is, in it's own way, a land.</h4>#}
+    </div>{#
+  #}<div class="column column--vertical-center width-50 align-right">
+      <div class="demo-image-sticker">
+        {{ aposSingleton(page, 'sticker', 'slideshow', { filter: false, limit: 1, aspectRatio: [1, 1] }) }}
+        <img class="demo-apos-shadow image-sticker" src="/images/demo_logo_apos_shadow.png" alt="Apostrophe">
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block mainContent %}
+  <div class="block content">
+    <div class="inner">
+      <div class="demo-subnav inline-top width-25">
+        {% if page.parent.type == 'default' %}
+          <a class="subnav-parent" href="{{ page.parent.url }}">← {{ page.parent.title }}</a>
+        {% endif %}
+        <div class="subnav-page-title hide-mobile">{{ page.title }}</div>
+        <ul class="subnav-items hide-mobile">
+          {% for child in page.children %}
+            <li class="subnav-item">
+              <a href="{{ child.url }}">{{ child.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>{#
+    #}<div class="demo-main inline-top width-75">
+        {{ aposArea(page, 'main', {
+          controls: ['style', 'bold', 'italic', 'createLink', 'unlink', 'slideshow', 'video'],
+          styles: [
+            { value: 'p', label: 'Text' },
+            { value: 'h3', label: 'Title' },
+            { value: 'h5', label: 'Subtitle' }
+          ],
+          lockups: ['left', 'right']
+        }) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
