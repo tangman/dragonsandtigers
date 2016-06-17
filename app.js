@@ -44,7 +44,10 @@ site.init({
 
   pages: {
     types: [
-      { name: 'dragon', label: 'Default Page' },
+      { name: 'dragon-home', label: 'Dragon Theme Home Page' },
+      { name: 'dragon/home', label: 'Dragon Theme Home Page 2' },
+      { name: 'dragon-page', label: 'Dragon Theme Content Page' },
+      { name: 'default', label: 'Default Page' },
       { name: 'home', label: 'Home Page' },
       { name: 'blog', label: 'Blog' }
     ]
