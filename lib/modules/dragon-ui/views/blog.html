@@ -1,6 +1,5 @@
-{% extends 'layout.html' %}
-{% include 'pageMacros.html' %}
-{% include 'blogMacros.html' %}
+{% extends "layout.html" %}
+{% include '../../apostrophe-blog-2/views/blogMacros.html' %}
 {% include 'pagerMacros.html' %}
 
 {# the bodyClass block allows us to attach a classname to the body tag for easy style-scoping. #}
@@ -30,7 +29,7 @@
 
 
 {% block mainContent %}
-
+<h3>Blog Page Index</h3>
 <div class="block content">
   <div class="inner">
     {% if page._edit %}

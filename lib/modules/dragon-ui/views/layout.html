@@ -1,0 +1,28 @@
+{% include '../../dragon-ui/views/components/nav.html' %}
+{# DO NOT REMOVE THESE COMMENTS. We parse these for outerLayout and refresh operations #}
+<!-- APOS-BODY-CLASS {% block bodyClass %}{% endblock %} -->
+<!-- APOS-TITLE {% block title %}{% endblock %} -->
+<!-- APOS-EXTRA-HEAD {% block extraHead %}
+
+{% endblock %} -->
+<!-- APOS-SEO-DESCRIPTION {% block seoDescription %}{% endblock %} -->
+
+{% block header %}
+  <header>
+    <a href="/">
+      <h2>Dragons and Tigers</h2>
+    </a>
+  </header>
+
+  {{ nav(page, {classes: ''}) }}
+
+{% endblock %}
+
+
+<section class="main-content">
+  {% block headerContent %}
+  {% endblock %}
+  
+  {% block mainContent %}    
+  {% endblock %}
+</section>

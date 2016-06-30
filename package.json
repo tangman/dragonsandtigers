@@ -18,7 +18,7 @@
     "apostrophe-editor-2": "0.5.x",
     "apostrophe-events": "^0.5.18",
     "apostrophe-groups": "0.5.x",
-    "apostrophe-people": "0.5.x",
+    "apostrophe-people": "^0.5.61",
     "apostrophe-redirects": "0.5.x",
     "apostrophe-search": "0.5.x",
     "apostrophe-site": "0.5.x",

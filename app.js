@@ -44,8 +44,6 @@ site.init({
 
   pages: {
     types: [
-      { name: 'dragon/home', label: 'Dragon Theme Home Page 2' },
-      { name: 'dragon/page', label: 'Dragon Theme Content Page' },
       { name: 'default', label: 'Default Page' },
       { name: 'home', label: 'Home Page' },
       { name: 'blog', label: 'Blog' }
@@ -117,13 +115,14 @@ site.init({
     'apostrophe-browserify': {
       files: ["./public/js/modules/_site.js"]
     }
+    ,'dragon-ui': {}
   },
 
   // These are assets we want to push to the browser.
   // The scripts array contains the names of JS files in /public/js,
   // while stylesheets contains the names of LESS files in /public/css
   assets: {
-    stylesheets: ['site'],
+    stylesheets: [], //['site'],
     scripts: ['_site-compiled']
   },
 

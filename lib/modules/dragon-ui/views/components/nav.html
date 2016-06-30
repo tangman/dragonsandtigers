@@ -1,0 +1,8 @@
+{% macro nav(page, options) %}
+<nav class="{% if options.classes%} {{options.classes}}{% endif%}">
+  {% for item in page.tabs %}
+    <a href="{{ item.url }}" {% if page.slug == item.slug %}class="active"{% endif %}>{{ item.title }}</a> 
+    {% endfor %}
+  </ul>
+</nav>
+{% endmacro %}
