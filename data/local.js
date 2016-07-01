@@ -49,8 +49,7 @@ module.exports = {
   // If these are your db settings then you don't need to be explicit. If not
   // you can uncomment this and get more specific.
   db: {
-    uri: process.env.MONGODB_URI
-    // ?? 'mongodb://localhost:27017/dragons'
+    uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/dragons'
 
     // There is legacy support for host, port, name, user and password options,
     // but this is not necessary. They can all go in the uri option like this:
