@@ -10,11 +10,14 @@
 {% block header %}
   <header>
     <a href="/">
-      <h2>Dragons and Tigers</h2>
+      <span class="header-logo">&nbsp;</span>
     </a>
+
+    {{ nav(page, {classes: ''}) }}
+    
   </header>
 
-  {{ nav(page, {classes: ''}) }}
+  
 
 {% endblock %}
 

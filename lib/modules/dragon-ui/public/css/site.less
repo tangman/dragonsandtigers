@@ -1,5 +1,6 @@
 body {
   background-color: #eee;
+  background-image: url(../images/concrete_wall_3.png);
   font-family: 'Crimson Text', Arial;
   font-size: 16pt;
 }
@@ -8,18 +9,30 @@ a {
 }
 
 header {
-  background: #333;
+  background-color: #333;
+  background-image: url(../images/wood_1.png);
   .flex();
-  .flex-direction(row);
+  .flex-direction(column);
   .flex-justify(center);
   .flex-align-items(center);
-  padding: 15px 10px 15px 10px;
+  padding: 3px 10px 0px 10px;
   color: #fff;
-
+  position:relative;
+  z-index: 2;
+  box-shadow: 0px 3px 5px #aaa;
   a {
     text-decoration: none;
     color: #fff;
   }
+}
+
+.header-logo {
+  position:relative;
+  display:inline-block;
+  width:300px;
+  height: 143px;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
 }
 
 nav 
@@ -29,7 +42,8 @@ nav
 	.flex-justify(center);
 	.flex-align-items(center);
 
-  background-color: #666;
+  margin-top: 10px;
+  background-color: rgba(255,255,255,0.1);
   font-size: 1.3rem;
   a {
     display: inline-block;
@@ -38,9 +52,10 @@ nav
     text-align:center;
     color: #fff;
     &:hover {
-      background: #888;
+      background-color: rgba(255,255,255,0.15);
     }
   }
+
 }
 
 h1 { font-size: 1.8rem; }
@@ -54,12 +69,15 @@ h6 { font-size: 1.0rem; }
   max-width: 1000px;
   margin: auto;
   background: #fff;
-  box-shadow: 0px 5px 3px #ddd;
+  box-shadow: 0px 5px 20px #aaa;
   padding: 10px 20px;
+
+  position:relative;
+  z-index:1;
 }
 .page-header {
   background: #eee;
-  padding: 1em;
+  padding: 1em 1em 0em 1em;
   font-size: 1.2em;
   margin-top: 1em;
 }
