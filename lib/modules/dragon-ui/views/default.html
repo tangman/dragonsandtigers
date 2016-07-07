@@ -8,23 +8,18 @@
 
 
 {% block headerContent %}
-  <div class="demo-pageheader">
-    <div class="column column--vertical-center width-50">
-      <h3 class="hide-desktop page-title">{{page.title}}</h3>
-      <ul class="subnav-items hide-desktop">
-        {% for child in page.children %}
-          <li class="subnav-item">
-            <a href="{{ child.url }}">{{ child.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
+  <div>
+    <div>
+      <h3 class="page-title">{{page.title}}</h3>
+      <div class="page-header">
       {{ aposArea(page, 'pageheader', {
-        textOnly: true,
+        richText: true,
         styles: [
           { value: 'h3', label: 'Title'    },
           { value: 'h4', label: 'Subtitle' }
         ]
       }) }}
+      </div>
     </div>
     <div class="column column--vertical-center width-50 align-right">
       <div class="demo-image-sticker">
@@ -35,11 +30,13 @@
 {% endblock %}
 
 {% block mainContent %}
-  <div class="block content">
+  <div class="page-main">
+{#
     <div>
-      {% if page.parent.type == 'default' %}
+    {% if page.parent.type == 'default' %}
         <a class="subnav-parent" href="{{ page.parent.url }}">← {{ page.parent.title }}</a>
       {% endif %}
+
       <div class="subnav-page-title hide-mobile">{{ page.title }}</div>
       <ul class="subnav-items hide-mobile">
         {% for child in page.children %}
@@ -49,7 +46,8 @@
         {% endfor %}
       </ul>
     </div>
-    <div class="demo-main inline-top width-75">
+#}
+    <div class="page-content">
       {{ aposArea(page, 'main', {
         controls: ['style', 'bold', 'italic', 'createLink', 'unlink', 'slideshow', 'video'],
         styles: [
@@ -59,6 +57,21 @@
         ],
         lockups: ['left', 'right']
       }) }}
+    </div>
+
+    <div class="page-sidebar">
+      {% if page.children.length %}
+        <div class="page-sidebar-header">
+          More Reading
+        </div>
+        <ul class="page-sidebar-content subnav-items hide-mobile">
+          {% for child in page.children %}
+            <li class="subnav-item">
+              <a href="{{ child.url }}">{{ child.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
   </div>
 {% endblock %}
